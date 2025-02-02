@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 3 Coding Exercise: Using Variables</title>
+</head>
+<body>
+    <div id="output"></div>
+    <script>
+        let name = "Aiden";
+        let age = 19;
+        let isStudent = true;
+
+        
+        name = "AK";
+        age = 19;
+        isStudent = false;
+
+        
+        const output = document.getElementById("output");
+        output.innerHTML = `
+            Is Student? ${isStudent} <br>
+            ${name} is ${age} years old. <br>
+            Sum: ${10 + 5}, Product: ${10 * 5}
+        `;
+
+       
+        console.log("Name:", name);
+    </script>
+</body>
+</html>
