@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week 4 Coding Exercise: Checking and Comparing Data</title>
+</head>
+<body>
+    <div id="output"></div> 
+    <script>
+        let name = "Aiden";
+        let age = 19;
+        let isStudent = true;
+
+        const outputDiv = document.getElementById("output");
+
+        if (isStudent) {
+            outputDiv.innerHTML += "You are a student!<br>";
+        }
+
+        if (age >= 18) {
+            outputDiv.innerHTML += "You are an adult.<br>";
+        } else {
+            outputDiv.innerHTML += "You are a minor.<br>";
+        }
+
+        if (age < 13) {
+            outputDiv.innerHTML += "Child<br>";
+        } else if (age < 20) {
+            outputDiv.innerHTML += "Teenager<br>";
+        } else {
+            outputDiv.innerHTML += "Adult<br>";
+        }
+
+        switch (name) {
+            case "Alice":
+                outputDiv.innerHTML += "Hi Alice!<br>";
+                break;
+            case "Bob":
+                outputDiv.innerHTML += "Hi Bob!<br>";
+                break;
+            default:
+                outputDiv.innerHTML += "Hello!<br>";
+        }
+    </script>
+</body>
+</html>
