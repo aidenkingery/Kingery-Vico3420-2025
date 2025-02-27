@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to right, #f7f7f7, #e3e3e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 0px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            background: transparent;
+            font-size: 16px;
+        }
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: gray;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label,
+        .input-group select:focus + label {
+            top: -10px;
+            left: 5px;
+            font-size: 12px;
+            color: black;
+        }
+        button {
+            background: black;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: gray;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form</h2>
+        <form id="myForm">
+            <div class="input-group">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">Name</label>
+            </div>
+            <div class="input-group">
+                <input type="number" id="age" placeholder=" " required>
+                <label for="age">Age</label>
+            </div>
+            <div class="input-group">
+                <select id="country" required>
+                    <option value="" disabled selected></option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="UK">UK</option>
+                </select>
+                <label for="country">Country</label>
+            </div>
+            <button onclick="handleClick(event)">Submit</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        function handleClick(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let country = document.getElementById("country").value;
+            document.getElementById("result").innerHTML = `Thank you, ${name}. You are ${age} years old and from ${country}.`;
+        }
+    </script>
+</body>
+</html>
